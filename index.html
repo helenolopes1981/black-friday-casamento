@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Black Friday de Casamento | Heleno Lopes Fotografia</title>
+<meta name="description" content="10 datas para casamentos em 2027 com condição especial de Black Friday. Fotografia de casamento em Ponte Nova/MG.">
+<meta property="og:title" content="Black Friday de Casamento | Heleno Lopes Fotografia">
+<meta property="og:description" content="10 datas para casamentos em 2027 com até R$ 960 de desconto. Só de 27 a 30 de novembro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #B8955A;
+    --gold-light: #D9C08F;
+    --gold-dark: #6E5530;
+    --light-bg: #F5F0E8;
+    --light-border: #E3D9C9;
+    --dark-bg: #15120F;
+    --dark-2: #1E1A16;
+    --muted-light: #6F665D;
+    --red: #C4553F;
+    --gradient: linear-gradient(165deg, #4A3820 0%, #7A5E32 55%, #9C7C48 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--dark-bg); color: #fff; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, .serif { font-family: 'Playfair Display', serif; font-weight: 500; font-variant-numeric: lining-nums; letter-spacing: -0.5px; line-height: 1.1; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  .rule { width: 48px; height: 1px; background: var(--gold); margin: 24px 0; }
+  [hidden] { display: none !important; }
+
+  /* faixa do topo */
+  .ribbon { background: var(--gold); color: var(--dark-bg); text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 1px; padding: 9px 16px; }
+
+  /* topo */
+  header { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.55); font-weight: 600; }
+
+  /* hero */
+  .hero { padding: 48px 0 72px; position: relative; }
+  .hero::before { content: ""; position: absolute; inset: 0 20px; border: 1px solid rgba(184,149,90,0.2); pointer-events: none; max-width: 1040px; margin: 0 auto; }
+  .hero-inner { padding: 40px 28px; max-width: 760px; }
+  .hero h1 { font-size: clamp(44px, 8vw, 84px); }
+  .hero h1 .num { color: var(--gold); }
+  .hero h1.italic { font-style: italic; font-weight: 400; }
+  .hero p.sub { font-size: clamp(16px, 2.2vw, 19px); color: rgba(255,255,255,0.72); max-width: 560px; }
+
+  /* contagem */
+  .count-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin: 34px 0 12px; font-weight: 600; }
+  .countdown { display: flex; gap: 10px; flex-wrap: wrap; }
+  .countdown div { min-width: 78px; padding: 14px 10px 10px; border: 1px solid rgba(184,149,90,0.35); text-align: center; background: rgba(255,255,255,0.02); }
+  .countdown b { display: block; font-family: 'Playfair Display', serif; font-variant-numeric: lining-nums tabular-nums; font-size: 38px; font-weight: 400; color: var(--gold-light); line-height: 1; }
+  .countdown span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+
+  /* datas restantes */
+  .slots { margin-top: 30px; max-width: 420px; }
+  .slots-top { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; color: rgba(255,255,255,0.75); }
+  .slots-top b { color: var(--gold-light); }
+  .slots-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+  .slots-bar i { display: block; height: 100%; background: var(--gold); }
+
+  /* botões */
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 40px; font-weight: 600; font-size: 15px; letter-spacing: 0.3px; text-decoration: none; cursor: pointer; border: none; transition: transform .15s ease, opacity .15s ease; }
+  .btn:hover { transform: translateY(-1px); opacity: 0.92; }
+  .btn-gold { background: var(--gold); color: var(--dark-bg); }
+  .btn-light { background: var(--light-bg); color: var(--gold-dark); }
+  .btn-dark { background: var(--dark-bg); color: var(--gold-light); }
+  .btn svg { width: 18px; height: 18px; }
+  .hero .btn { margin-top: 34px; }
+  .hint { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 12px; }
+
+  /* seções claras */
+  section.light { background: var(--light-bg); color: var(--dark-bg); padding: 88px 0; }
+  section.light .tag { color: var(--gold-dark); }
+  section.light h2 { font-size: clamp(32px, 5vw, 48px); max-width: 640px; }
+  section.light p.lead { color: var(--muted-light); font-size: 17px; max-width: 600px; margin-top: 16px; }
+  section.dark { padding: 88px 0; }
+  section.dark h2 { font-size: clamp(32px, 5vw, 48px); }
+
+  /* fatos */
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 44px; border-top: 1px solid var(--light-border); }
+  .facts div { padding: 24px 20px 0 0; }
+  .facts div + div { padding-left: 24px; border-left: 1px solid var(--light-border); }
+  .facts b { display: block; font-family: 'Playfair Display', serif; font-variant-numeric: lining-nums; font-size: 40px; font-weight: 500; color: var(--gold-dark); line-height: 1.1; }
+  .facts span { font-size: 14px; color: var(--muted-light); }
+
+  /* pacotes */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+  .card { background: var(--dark-2); border: 1px solid rgba(184,149,90,0.2); padding: 32px 26px; display: flex; flex-direction: column; position: relative; }
+  .card.featured { background: var(--gradient); border-color: transparent; }
+  .card .badge { position: absolute; top: -12px; left: 26px; background: var(--light-bg); color: var(--gold-dark); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; }
+  .card .opt { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .card.featured .opt { color: rgba(255,255,255,0.7); }
+  .card h3 { font-size: 28px; margin: 10px 0 18px; }
+  .card ul { list-style: none; margin-bottom: 24px; flex: 1; }
+  .card li { display: flex; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 14.5px; color: rgba(255,255,255,0.88); }
+  .card li::before { content: ""; width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+  .card.featured li { border-color: rgba(255,255,255,0.15); color: #fff; }
+  .card.featured li::before { background: var(--gold-light); }
+
+  .normal { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+  .normal .lbl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; color: rgba(255,255,255,0.7); }
+  .normal .val { font-family: 'Playfair Display', serif; font-variant-numeric: lining-nums; font-size: 24px; color: rgba(255,255,255,0.8); text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: var(--red); }
+  .card.featured .normal .val { text-decoration-color: #fff; }
+  .save { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; background: var(--gold); color: var(--dark-bg); }
+  .card.featured .save { background: var(--light-bg); color: var(--gold-dark); }
+  .bf-lbl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; color: var(--gold); }
+  .card.featured .bf-lbl { color: rgba(255,255,255,0.75); }
+  .now { font-family: 'Playfair Display', serif; font-variant-numeric: lining-nums; font-size: 52px; color: var(--gold-light); line-height: 1.05; }
+  .card.featured .now { color: #fff; }
+  .now small { font-size: 22px; margin-right: 4px; }
+  .split { font-size: 14px; color: rgba(255,255,255,0.65); margin-top: 4px; }
+  .pix { display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 14px; color: rgba(255,255,255,0.75); }
+  .pix b { font-size: 19px; color: #fff; }
+  .card .btn { margin-top: 24px; justify-content: center; }
+
+  /* preço escondido (antes do dia 27) */
+  .locked { border: 1px dashed rgba(184,149,90,0.45); padding: 22px 16px; text-align: center; }
+  .locked .q { font-family: 'Playfair Display', serif; font-size: 40px; color: rgba(255,255,255,0.25); letter-spacing: 6px; line-height: 1; }
+  .locked p { font-size: 13px; color: rgba(255,255,255,0.65); margin-top: 8px; }
+  .card.featured .locked { border-color: rgba(255,255,255,0.4); }
+
+  /* passos */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 48px; }
+  .step .n { font-family: 'Playfair Display', serif; font-variant-numeric: lining-nums; font-size: 40px; color: var(--gold); line-height: 1; }
+  .step b { display: block; font-size: 16px; margin: 14px 0 6px; }
+  .step span { font-size: 14px; color: var(--muted-light); }
+
+  /* perguntas */
+  .faq { margin-top: 40px; max-width: 760px; }
+  .faq details { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 20px 0; }
+  .faq summary { cursor: pointer; font-size: 17px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--gold); font-size: 22px; line-height: 1; }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { color: rgba(255,255,255,0.65); margin-top: 10px; font-size: 15px; }
+
+  /* fechamento */
+  .final { background: var(--gradient); padding: 96px 0; text-align: center; }
+  .final h2 { font-size: clamp(36px, 6vw, 60px); }
+  .final p { color: rgba(255,255,255,0.85); max-width: 520px; margin: 18px auto 34px; font-size: 17px; }
+  footer { padding: 34px 0 110px; text-align: center; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+
+  /* botão fixo no celular */
+  .sticky { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50; display: none; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+
+  /* barra de teste das fases (só aparece com ?fase=) */
+  .devbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; color: #222; font-size: 12px; padding: 8px 12px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+  .devbar a { padding: 4px 10px; border: 1px solid #ccc; border-radius: 14px; text-decoration: none; }
+  .devbar a.on { background: #222; color: #fff; border-color: #222; }
+  body.has-dev { padding-top: 44px; }
+
+  @media (max-width: 860px) {
+    .cards { grid-template-columns: 1fr; gap: 28px; }
+    .steps { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    header span:last-child { display: none; }
+    .hero-inner { padding: 32px 18px; }
+    .countdown div { min-width: 0; flex: 1; padding: 12px 4px 8px; }
+    .countdown b { font-size: 30px; }
+    .facts { grid-template-columns: 1fr; }
+    .facts div + div { padding-left: 0; border-left: none; border-top: 1px solid var(--light-border); }
+    .facts div { padding: 18px 0; }
+    .steps { grid-template-columns: 1fr; }
+    .sticky { display: flex; }
+    .hero .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     CONFIGURAÇÃO — só mexer aqui
+     ============================================================ -->
+<script>
+const CONFIG = {
+  whatsapp: '5531988281790',   // seu número com 55 + DDD, só números
+  datasTotal: 10,
+  datasRestantes: 10,          // vá diminuindo conforme fechar contratos
+  vespera:   '2026-11-26T00:00:00-03:00',
+  inicio:    '2026-11-27T00:00:00-03:00',
+  ultimoDia: '2026-11-30T00:00:00-03:00',
+  fim:       '2026-12-01T00:00:00-03:00',
+  paginaNormal: 'https://www.helenolopesfotografo.com.br/casamento',
+  pacotes: [
+    { nome: 'Pacote completo', normal: '3.250', bf: '2.850', parcela: '285', pix: '2.700', economia: '400',
+      itens: ['Making of da noiva', 'Cerimônia e recepção', 'Ensaio pré-casamento', 'Até 6 horas de cobertura', 'Fotos editadas, por link e pendrive'] },
+    { nome: 'Igreja e recepção', normal: '2.500', bf: '2.190', parcela: '219', pix: '2.090', economia: '310',
+      itens: ['Cerimônia na igreja', 'Recepção', 'Até 5 horas de cobertura', 'Fotos editadas, por link e pendrive'] },
+    { nome: 'Completo com álbum', normal: '4.750', bf: '3.990', parcela: '399', pix: '3.790', economia: '760', destaque: 'Maior desconto',
+      itens: ['Tudo do pacote completo', 'Álbum 30x30 com 40 páginas', 'Diagramado com as melhores fotos do dia'] },
+  ],
+};
+</script>
+
+<div class="ribbon" id="ribbon" hidden></div>
+
+<div class="wrap">
+  <header><span>Heleno Lopes Fotografia</span><span>Ponte Nova · MG</span></header>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="tag" id="hero-tag">Black Friday 2026</span>
+      <h1 id="hero-title"></h1>
+      <div class="rule"></div>
+      <p class="sub" id="hero-sub"></p>
+
+      <div id="count-box">
+        <div class="count-label" id="count-label"></div>
+        <div class="countdown">
+          <div><b id="cd-d">00</b><span>dias</span></div>
+          <div><b id="cd-h">00</b><span>horas</span></div>
+          <div><b id="cd-m">00</b><span>min</span></div>
+          <div><b id="cd-s">00</b><span>seg</span></div>
+        </div>
+      </div>
+
+      <div class="slots" id="slots" hidden>
+        <div class="slots-top"><span>Datas disponíveis</span><span><b id="slots-n"></b> de <span id="slots-t"></span></span></div>
+        <div class="slots-bar"><i id="slots-bar"></i></div>
+      </div>
+
+      <a class="btn btn-gold" id="hero-cta" target="_blank" rel="noopener"></a>
+      <p class="hint" id="hero-hint"></p>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE AGORA -->
+<section class="light">
+  <div class="wrap">
+    <span class="tag">Por que agora</span>
+    <h2>As melhores datas de 2027 são as primeiras a sair.</h2>
+    <p class="lead">Reservando na Black Friday, você garante a data do seu casamento e o preço de hoje, mesmo que os valores subam no ano que vem.</p>
+    <div class="facts">
+      <div><b id="fact-datas">10</b><span>datas disponíveis</span></div>
+      <div><b>27–30</b><span>de novembro</span></div>
+      <div><b>2027</b><span>casamentos no ano</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACOTES -->
+<section class="dark" id="pacotes">
+  <div class="wrap">
+    <span class="tag">Pacotes</span>
+    <h2 id="pac-title">Escolha o seu.</h2>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="light">
+  <div class="wrap">
+    <span class="tag">Como garantir</span>
+    <h2>Reservar é simples.</h2>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><b>Chame no WhatsApp</b><span>Me diga a data e os locais do casamento.</span></div>
+      <div class="step"><span class="n">02</span><b>Confirmo a disponibilidade</b><span>Na hora, se a data estiver livre.</span></div>
+      <div class="step"><span class="n">03</span><b>Escolha como pagar</b><span>10x sem juros no cartão, ou à vista no Pix com desconto extra.</span></div>
+      <div class="step"><span class="n">04</span><b>Data garantida</b><span>Pagamento confirmado, sua data fica reservada em contrato.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERGUNTAS -->
+<section class="dark">
+  <div class="wrap">
+    <span class="tag">Dúvidas</span>
+    <h2>Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>Posso fechar agora para um casamento em qualquer mês de 2027?</summary><p>Sim. A condição vale para qualquer data de 2027, desde que ela ainda esteja livre na minha agenda.</p></details>
+      <details><summary>Como funciona o pagamento?</summary><p>Na Black Friday o pagamento é feito no fechamento: em até 10x sem juros no cartão, ou à vista no Pix com desconto extra.</p></details>
+      <details><summary>Atende casamentos fora de Ponte Nova?</summary><p>Sim. Para outras cidades, o deslocamento é combinado à parte, de acordo com a distância.</p></details>
+      <details><summary>E se a festa passar do horário do pacote?</summary><p>Dá para contratar hora extra no dia ou deixar combinado antes, no contrato.</p></details>
+      <details><summary>O que acontece quando as 10 datas acabarem?</summary><p>A condição encerra na hora, mesmo antes de 30 de novembro. Depois disso, os valores voltam ao normal.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section class="final">
+  <div class="wrap">
+    <h2 id="final-title"></h2>
+    <p id="final-sub"></p>
+    <a class="btn btn-light" id="final-cta" target="_blank" rel="noopener"></a>
+  </div>
+</section>
+
+<footer>Heleno Lopes Fotografia · Ponte Nova/MG</footer>
+
+<a class="btn btn-gold sticky" id="sticky-cta" target="_blank" rel="noopener"></a>
+
+<script>
+(function () {
+  const WA_ICON = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.44 9.44 0 0 1-4.81-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.42 9.42 0 0 1-1.45-5.03c0-5.2 4.24-9.44 9.47-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.77 6.68c0 5.21-4.24 9.45-9.45 9.45M20.1 3.9A11.3 11.3 0 0 0 12.05.55C5.77.55.66 5.66.66 11.94c0 2 .53 3.96 1.52 5.69L.56 23.5l6.03-1.58a11.4 11.4 0 0 0 5.45 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.34-8.05"/></svg>';
+  const $ = (id) => document.getElementById(id);
+  const wa = (msg) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  const T = {
+    vespera: new Date(CONFIG.vespera), inicio: new Date(CONFIG.inicio),
+    ultimo: new Date(CONFIG.ultimoDia), fim: new Date(CONFIG.fim),
+  };
+
+  // fase de teste via ?fase=aquecimento|vespera|aberta|ultimo|esgotada|encerrada
+  const params = new URLSearchParams(location.search);
+  const forced = params.get('fase');
+  const FASES = ['aquecimento', 'vespera', 'aberta', 'ultimo', 'esgotada', 'encerrada'];
+
+  function faseAtual(now) {
+    if (forced && FASES.includes(forced)) return forced;
+    if (now < T.vespera) return 'aquecimento';
+    if (now < T.inicio) return 'vespera';
+    if (now >= T.fim) return 'encerrada';
+    if (CONFIG.datasRestantes <= 0) return 'esgotada';
+    if (now < T.ultimo) return 'aberta';
+    return 'ultimo';
+  }
+
+  // horário de "agora" simulado no modo teste, para a contagem fazer sentido
+  function agora() {
+    if (!forced) return new Date();
+    const sim = { aquecimento: '2026-11-16T10:00:00-03:00', vespera: '2026-11-26T20:00:00-03:00',
+      aberta: '2026-11-27T10:00:00-03:00', ultimo: '2026-11-30T15:00:00-03:00',
+      esgotada: '2026-11-28T10:00:00-03:00', encerrada: '2026-12-02T10:00:00-03:00' }[forced];
+    return new Date(new Date(sim).getTime() + (Date.now() - LOAD));
+  }
+  const LOAD = Date.now();
+
+  const MSG_VIP = 'Olá, Heleno! Quero entrar na lista VIP da Black Friday de casamento.';
+  const MSG_BF = 'Olá, Heleno! Quero garantir minha data na Black Friday de casamento.';
+  const MSG_NORMAL = 'Olá, Heleno! Quero consultar uma data para o meu casamento.';
+
+  const TEXTOS = {
+    aquecimento: {
+      title: '<span class="num">10</span> datas para casamentos em 2027.',
+      sub: 'Na Black Friday vou abrir 10 datas com condição especial. Os preços serão revelados em 27 de novembro, e quem está na lista VIP fica sabendo antes.',
+      countLabel: 'A Black Friday começa em', alvo: 'inicio',
+      cta: 'Entrar na lista VIP', msg: MSG_VIP, hint: 'Você recebe as condições no WhatsApp antes de todo mundo.',
+      pacTitle: 'O que vai estar em oferta.', lock: true,
+      finalTitle: 'Não fique de fora.', finalSub: 'Entre na lista VIP e receba as condições antes da abertura.',
+    },
+    vespera: {
+      title: 'Amanhã.', italic: true,
+      sub: '10 datas para casamentos em 2027 com preço de Black Friday. A lista VIP recebe as condições hoje à noite.',
+      countLabel: 'Começa em', alvo: 'inicio',
+      cta: 'Entrar na lista VIP', msg: MSG_VIP, hint: 'Ainda dá tempo de entrar.',
+      pacTitle: 'O que vai estar em oferta.', lock: true,
+      finalTitle: 'Falta pouco.', finalSub: 'Entre na lista VIP agora e receba as condições hoje à noite.',
+      ribbon: 'Amanhã começa a Black Friday',
+    },
+    aberta: {
+      title: '<span class="num">10</span> datas para casamentos em 2027.',
+      sub: 'Até R$ 960 de desconto. Só até 30 de novembro, ou até acabarem as datas.',
+      countLabel: 'Termina em', alvo: 'fim', slots: true,
+      cta: 'Garantir minha data', msg: MSG_BF, hint: 'Atendimento direto comigo pelo WhatsApp.',
+      pacTitle: 'Escolha o seu.',
+      finalTitle: 'Restam poucas datas.', finalSub: 'Válido até 30 de novembro, ou até acabarem as datas. Depois disso, os valores voltam ao normal.',
+      ribbon: 'Black Friday aberta · até 30 de novembro',
+    },
+    ultimo: {
+      title: 'Último dia.', italic: true,
+      sub: 'Hoje termina a Black Friday. A partir de amanhã, os valores voltam ao normal.',
+      countLabel: 'Termina em', alvo: 'fim', slots: true,
+      cta: 'Garantir minha data', msg: MSG_BF, hint: 'Atendimento direto comigo pelo WhatsApp.',
+      pacTitle: 'Última chance.',
+      finalTitle: 'Último dia.', finalSub: 'Se você vai casar em 2027 e ainda não garantiu a sua data, me chame hoje.',
+      ribbon: 'Último dia da Black Friday',
+    },
+    esgotada: {
+      title: 'As 10 datas foram preenchidas.',
+      sub: 'Obrigado a todos os noivos que confiaram no meu trabalho. Ainda tenho datas em 2027, nos valores normais.',
+      cta: 'Consultar minha data', msg: MSG_NORMAL, normal: true,
+      pacTitle: 'Pacotes', finalTitle: 'Ainda dá tempo.', finalSub: 'Me chame no WhatsApp e confira a sua data.',
+    },
+    encerrada: {
+      title: 'A Black Friday terminou.',
+      sub: 'Obrigado a todos os noivos que garantiram a sua data. Ainda tenho datas em 2027, nos valores normais.',
+      cta: 'Consultar minha data', msg: MSG_NORMAL, normal: true,
+      pacTitle: 'Pacotes', finalTitle: 'Ainda dá tempo.', finalSub: 'Me chame no WhatsApp e confira a sua data.',
+    },
+  };
+
+  function card(p, t) {
+    const msg = t.normal ? MSG_NORMAL : `Olá, Heleno! Quero garantir minha data na Black Friday com o ${p.nome}.`;
+    let preco;
+    if (t.lock) {
+      preco = `<div class="locked"><div class="q">R$ ?</div><p>Preço revelado em 27 de novembro</p></div>`;
+    } else if (t.normal) {
+      preco = `<span class="bf-lbl">Valor</span><div class="now"><small>R$</small>${p.normal}</div>`;
+    } else {
+      preco = `<div class="normal"><span class="lbl">Preço normal</span><span class="val">R$ ${p.normal}</span><span class="save">R$ ${p.economia} a menos</span></div>
+        <span class="bf-lbl">Black Friday</span>
+        <div class="now"><small>R$</small>${p.bf}</div>
+        <div class="split">em 10x de R$ ${p.parcela} sem juros no cartão</div>
+        <div class="pix"><span>ou à vista no Pix</span><b>R$ ${p.pix}</b></div>`;
+    }
+    const btn = t.lock
+      ? `<a class="btn btn-gold" href="${wa(MSG_VIP)}" target="_blank" rel="noopener">${WA_ICON} Quero saber antes</a>`
+      : `<a class="btn ${p.destaque ? 'btn-light' : 'btn-gold'}" href="${wa(msg)}" target="_blank" rel="noopener">${WA_ICON} ${t.normal ? 'Consultar data' : 'Quero este'}</a>`;
+    return `<div class="card ${p.destaque && !t.normal ? 'featured' : ''}">
+      ${p.destaque && !t.normal && !t.lock ? `<span class="badge">${p.destaque}</span>` : ''}
+      <span class="opt">Opção ${CONFIG.pacotes.indexOf(p) + 1}</span>
+      <h3>${p.nome}</h3>
+      <ul>${p.itens.map(i => `<li>${i}</li>`).join('')}</ul>
+      ${preco}${btn}
+    </div>`;
+  }
+
+  let faseRender = null;
+  function render() {
+    const now = agora();
+    const fase = faseAtual(now);
+    if (fase !== faseRender) {
+      faseRender = fase;
+      const t = TEXTOS[fase];
+      $('hero-title').innerHTML = t.title;
+      $('hero-title').classList.toggle('italic', !!t.italic);
+      $('hero-sub').textContent = t.sub;
+      $('count-box').hidden = !t.alvo;
+      if (t.alvo) $('count-label').textContent = t.countLabel;
+      $('slots').hidden = !t.slots;
+      const ctaHtml = `${WA_ICON} ${t.cta}`;
+      [['hero-cta'], ['final-cta'], ['sticky-cta']].forEach(([id]) => { $(id).innerHTML = ctaHtml; $(id).href = wa(t.msg); });
+      $('hero-hint').textContent = t.hint || '';
+      $('ribbon').hidden = !t.ribbon;
+      $('ribbon').textContent = t.ribbon || '';
+      $('pac-title').textContent = t.pacTitle;
+      $('cards').innerHTML = CONFIG.pacotes.map(p => card(p, t)).join('');
+      $('final-title').textContent = t.finalTitle;
+      $('final-sub').textContent = t.finalSub;
+      const restantes = forced === 'esgotada' ? 0 : CONFIG.datasRestantes;
+      $('slots-n').textContent = restantes;
+      $('slots-t').textContent = CONFIG.datasTotal;
+      $('slots-bar').style.width = (restantes / CONFIG.datasTotal * 100) + '%';
+      $('fact-datas').textContent = (fase === 'aberta' || fase === 'ultimo') ? restantes : CONFIG.datasTotal;
+      if (fase === 'aberta' || fase === 'ultimo') $('fact-datas').nextElementSibling.textContent = 'datas restantes';
+      document.title = fase === 'encerrada' || fase === 'esgotada'
+        ? 'Fotografia de Casamento | Heleno Lopes Fotografia'
+        : 'Black Friday de Casamento | Heleno Lopes Fotografia';
+    }
+    const alvo = TEXTOS[fase].alvo;
+    if (alvo) {
+      let ms = Math.max(0, T[alvo] - now);
+      const d = Math.floor(ms / 864e5); ms -= d * 864e5;
+      const h = Math.floor(ms / 36e5); ms -= h * 36e5;
+      const m = Math.floor(ms / 6e4); ms -= m * 6e4;
+      const s = Math.floor(ms / 1e3);
+      const pad = (n) => String(n).padStart(2, '0');
+      $('cd-d').textContent = pad(d); $('cd-h').textContent = pad(h);
+      $('cd-m').textContent = pad(m); $('cd-s').textContent = pad(s);
+    }
+  }
+
+  if (forced) {
+    document.body.classList.add('has-dev');
+    const bar = document.createElement('div');
+    bar.className = 'devbar';
+    bar.innerHTML = '<b>Modo teste:</b> ' + FASES.map(f => `<a href="?fase=${f}" class="${f === forced ? 'on' : ''}">${f}</a>`).join('');
+    document.body.prepend(bar);
+  }
+
+  render();
+  setInterval(render, 1000);
+})();
+</script>
+</body>
+</html>
