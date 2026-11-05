@@ -181,7 +181,8 @@ const CONFIG = {
   whatsapp: '5531988281790',   // seu número com 55 + DDD, só números
   datasTotal: 10,
   datasRestantes: 10,          // vá diminuindo conforme fechar contratos
-  vespera:   '2026-11-26T00:00:00-03:00',
+  preVenda:  '2026-11-20T00:00:00-03:00',   // quem pediu para ser avisada recebe as condições
+  vespera:  '2026-11-26T00:00:00-03:00',
   inicio:    '2026-11-27T00:00:00-03:00',
   ultimoDia: '2026-11-30T00:00:00-03:00',
   fim:       '2026-12-01T00:00:00-03:00',
@@ -304,21 +305,22 @@ const CONFIG = {
   const $ = (id) => document.getElementById(id);
   const wa = (msg) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
   const T = {
-    vespera: new Date(CONFIG.vespera), inicio: new Date(CONFIG.inicio),
+    preVenda: new Date(CONFIG.preVenda), vespera: new Date(CONFIG.vespera), inicio: new Date(CONFIG.inicio),
     ultimo: new Date(CONFIG.ultimoDia), fim: new Date(CONFIG.fim),
   };
 
   // fase de teste via ?fase=aquecimento|vespera|aberta|ultimo|esgotada|encerrada
   const params = new URLSearchParams(location.search);
   const forced = params.get('fase');
-  const FASES = ['aquecimento', 'vespera', 'aberta', 'ultimo', 'esgotada', 'encerrada'];
+  const FASES = ['aquecimento', 'prevenda', 'vespera', 'aberta', 'ultimo', 'esgotada', 'encerrada'];
 
   function faseAtual(now) {
     if (forced && FASES.includes(forced)) return forced;
-    if (now < T.vespera) return 'aquecimento';
-    if (now < T.inicio) return 'vespera';
+    if (now < T.preVenda) return 'aquecimento';
     if (now >= T.fim) return 'encerrada';
     if (CONFIG.datasRestantes <= 0) return 'esgotada';
+    if (now < T.vespera) return 'prevenda';
+    if (now < T.inicio) return 'vespera';
     if (now < T.ultimo) return 'aberta';
     return 'ultimo';
   }
@@ -326,7 +328,7 @@ const CONFIG = {
   // horário de "agora" simulado no modo teste, para a contagem fazer sentido
   function agora() {
     if (!forced) return new Date();
-    const sim = { aquecimento: '2026-11-16T10:00:00-03:00', vespera: '2026-11-26T20:00:00-03:00',
+    const sim = { aquecimento: '2026-11-16T10:00:00-03:00', prevenda: '2026-11-22T10:00:00-03:00', vespera: '2026-11-26T20:00:00-03:00',
       aberta: '2026-11-27T10:00:00-03:00', ultimo: '2026-11-30T15:00:00-03:00',
       esgotada: '2026-11-28T10:00:00-03:00', encerrada: '2026-12-02T10:00:00-03:00' }[forced];
     return new Date(new Date(sim).getTime() + (Date.now() - LOAD));
@@ -340,20 +342,29 @@ const CONFIG = {
   const TEXTOS = {
     aquecimento: {
       title: '<span class="num">10</span> datas para casamentos em 2027.',
-      sub: 'Na Black Friday vou abrir 10 datas com condição especial. Os preços serão revelados em 27 de novembro, e quem pedir para ser avisada fica sabendo antes.',
-      countLabel: 'A Black Friday começa em', alvo: 'inicio',
-      cta: 'Quero saber antes', msg: MSG_VIP, hint: 'Você recebe as condições no WhatsApp antes de todo mundo.',
+      sub: 'Na Black Friday vou abrir 10 datas com condição especial. Os preços saem para todos em 27 de novembro, mas quem pedir para ser avisada recebe as condições no dia 20, uma semana antes.',
+      countLabel: 'A pré-venda começa em', alvo: 'preVenda',
+      cta: 'Quero saber antes', msg: MSG_VIP, hint: 'Você recebe as condições no WhatsApp no dia 20, uma semana antes de todo mundo.',
       pacTitle: 'O que vai estar em oferta.', lock: true,
-      finalTitle: 'Não fique de fora.', finalSub: 'Peça para ser avisada e receba as condições antes da abertura.',
+      finalTitle: 'Não fique de fora.', finalSub: 'Peça para ser avisada e receba as condições no dia 20, uma semana antes da abertura para todos.',
+    },
+    prevenda: {
+      title: 'A pré-venda começou.', italic: true,
+      sub: 'Quem pediu para ser avisada já recebeu as condições e está garantindo as datas de 2027. Peça agora e receba as condições no WhatsApp ainda hoje.',
+      countLabel: 'Abre para todos em', alvo: 'inicio', slots: true,
+      cta: 'Quero saber antes', msg: MSG_VIP, hint: 'Você recebe as condições no WhatsApp ainda hoje.',
+      pacTitle: 'O que está em oferta.', lock: true,
+      finalTitle: 'As datas já estão saindo.', finalSub: 'Peça agora e receba as condições antes da abertura para todos.',
+      ribbon: 'Pré-venda aberta para quem pediu antes',
     },
     vespera: {
       title: 'Amanhã.', italic: true,
-      sub: '10 datas para casamentos em 2027 com preço de Black Friday. Quem pediu para ser avisada recebe as condições hoje à noite.',
-      countLabel: 'Começa em', alvo: 'inicio',
+      sub: '10 datas para casamentos em 2027 com preço de Black Friday. A pré-venda já está garantindo datas: peça agora e receba as condições ainda hoje.',
+      countLabel: 'Abre para todos em', alvo: 'inicio', slots: true,
       cta: 'Quero saber antes', msg: MSG_VIP, hint: 'Ainda dá tempo de pedir.',
-      pacTitle: 'O que vai estar em oferta.', lock: true,
-      finalTitle: 'Falta pouco.', finalSub: 'Peça agora e receba as condições hoje à noite.',
-      ribbon: 'Amanhã começa a Black Friday',
+      pacTitle: 'O que está em oferta.', lock: true,
+      finalTitle: 'Falta pouco.', finalSub: 'Peça agora e receba as condições ainda hoje, antes da abertura para todos.',
+      ribbon: 'Amanhã a Black Friday abre para todos',
     },
     aberta: {
       title: '<span class="num">10</span> datas para casamentos em 2027.',
@@ -439,8 +450,9 @@ const CONFIG = {
       $('slots-n').textContent = restantes;
       $('slots-t').textContent = CONFIG.datasTotal;
       $('slots-bar').style.width = (restantes / CONFIG.datasTotal * 100) + '%';
-      $('fact-datas').textContent = (fase === 'aberta' || fase === 'ultimo') ? restantes : CONFIG.datasTotal;
-      if (fase === 'aberta' || fase === 'ultimo') $('fact-datas').nextElementSibling.textContent = 'datas restantes';
+      const mostraRestantes = ['prevenda', 'vespera', 'aberta', 'ultimo'].includes(fase);
+      $('fact-datas').textContent = mostraRestantes ? restantes : CONFIG.datasTotal;
+      if (mostraRestantes) $('fact-datas').nextElementSibling.textContent = 'datas restantes';
       document.title = fase === 'encerrada' || fase === 'esgotada'
         ? 'Fotografia de Casamento | Heleno Lopes Fotografia'
         : 'Black Friday de Casamento | Heleno Lopes Fotografia';
