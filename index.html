@@ -189,8 +189,8 @@ const CONFIG = {
   pacotes: [
     { nome: 'Pacote completo', normal: '3.250', bf: '2.850', parcela: '285', pix: '2.700', economia: '400',
       itens: ['Making of da noiva', 'Cerimônia e recepção', 'Ensaio pré-casamento', 'Até 6 horas de cobertura', 'Fotos editadas, por link e pendrive'] },
-    { nome: 'Igreja e recepção', normal: '2.500', bf: '2.190', parcela: '219', pix: '2.090', economia: '310',
-      itens: ['Cerimônia na igreja', 'Recepção', 'Até 5 horas de cobertura', 'Fotos editadas, por link e pendrive'] },
+    { nome: 'Cerimônia e recepção', normal: '2.500', bf: '2.190', parcela: '219', pix: '2.090', economia: '310',
+      itens: ['Cerimônia, na igreja ou ao ar livre', 'Recepção', 'Até 5 horas de cobertura', 'Fotos editadas, por link e pendrive'] },
     { nome: 'Completo com álbum', normal: '4.750', bf: '3.990', parcela: '399', pix: '3.790', economia: '760', destaque: 'Maior desconto',
       itens: ['Tudo do pacote completo', 'Álbum 30x30 com 40 páginas', 'Diagramado com as melhores fotos do dia'] },
   ],
@@ -388,7 +388,7 @@ const CONFIG = {
   };
 
   function card(p, t) {
-    const msg = t.normal ? MSG_NORMAL : `Olá, Heleno! Quero garantir minha data na Black Friday com o ${p.nome}.`;
+    const msg = t.normal ? MSG_NORMAL : `Olá, Heleno! Quero garantir minha data na Black Friday. Opção: ${p.nome}.`;
     let preco;
     if (t.lock) {
       preco = `<div class="locked"><div class="q">R$ ?</div><p>Preço revelado em 27 de novembro</p></div>`;
