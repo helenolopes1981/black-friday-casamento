@@ -7,6 +7,8 @@
 <meta name="description" content="10 datas para casamentos em 2027 com condição especial de Black Friday. Fotografia de casamento em Ponte Nova/MG.">
 <meta property="og:title" content="Black Friday de Casamento | Heleno Lopes Fotografia">
 <meta property="og:description" content="10 datas para casamentos em 2027 com até R$ 960 de desconto. Só de 27 a 30 de novembro.">
+<meta property="og:image" content="https://black.helenolopesfotografo.com.br/img/capa.jpg">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -153,6 +155,78 @@
   .devbar a.on { background: #222; color: #fff; border-color: #222; }
   body.has-dev { padding-top: 44px; }
 
+  /* ================= MOVIMENTO ================= */
+  /* foto de fundo do topo, com zoom lento */
+  .hero { overflow: hidden; }
+  .hero::before { z-index: 2; }
+  .hero > .wrap { position: relative; z-index: 3; }
+  .hero-bg { position: absolute; top: 0; bottom: 0; right: 0; left: 40%; z-index: 1; overflow: hidden; }
+  .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; opacity: 0.8; animation: kenburns 26s ease-in-out infinite alternate; }
+  .hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--dark-bg) 0%, rgba(21,18,15,0.55) 35%, rgba(21,18,15,0.1) 100%), linear-gradient(0deg, var(--dark-bg) 0%, transparent 30%), linear-gradient(180deg, var(--dark-bg) 0%, transparent 18%); }
+  @keyframes kenburns { from { transform: scale(1.03); } to { transform: scale(1.16) translate(-2%, 1.5%); } }
+
+  /* entrada do texto do topo */
+  .hero-inner > * { opacity: 0; transform: translateY(22px); animation: subir 0.9s cubic-bezier(.2,.7,.2,1) forwards; }
+  .hero-inner > *:nth-child(1) { animation-delay: .15s; }
+  .hero-inner > *:nth-child(2) { animation-delay: .3s; }
+  .hero-inner > *:nth-child(3) { animation-delay: .45s; }
+  .hero-inner > *:nth-child(4) { animation-delay: .6s; }
+  .hero-inner > *:nth-child(5) { animation-delay: .75s; }
+  .hero-inner > *:nth-child(6) { animation-delay: .85s; }
+  .hero-inner > *:nth-child(7) { animation-delay: .95s; }
+  .hero-inner > *:nth-child(8) { animation-delay: 1.05s; }
+  @keyframes subir { to { opacity: 1; transform: none; } }
+  .hero .rule { animation-name: linha; transform: none; width: 0; }
+  @keyframes linha { to { opacity: 1; width: 48px; } }
+
+  /* número dourado com brilho */
+  .hero h1 .num { background: linear-gradient(100deg, var(--gold) 0%, var(--gold-light) 40%, #fff6dd 50%, var(--gold-light) 60%, var(--gold) 100%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: brilhoTexto 4s linear infinite; }
+  @keyframes brilhoTexto { from { background-position: 100% 0; } to { background-position: -150% 0; } }
+
+  /* contagem: número desce ao trocar */
+  .countdown div { overflow: hidden; transition: border-color .3s; }
+  .countdown b.tick { animation: tick .45s cubic-bezier(.2,.7,.2,1); }
+  @keyframes tick { from { transform: translateY(-40%); opacity: 0; } to { transform: none; opacity: 1; } }
+
+  /* barra de datas enche ao abrir */
+  .slots-bar i { width: 0; transition: width 1.6s cubic-bezier(.2,.7,.2,1); background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light)); }
+
+  /* brilho passando nos botões dourados */
+  .btn { position: relative; overflow: hidden; }
+  .btn-gold::after, .btn-light::after { content: ""; position: absolute; top: 0; left: -70%; width: 45%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,0.5), transparent); transform: skewX(-20deg); animation: brilho 4s ease-in-out infinite; pointer-events: none; }
+  @keyframes brilho { 0%, 55% { left: -70%; } 100% { left: 140%; } }
+  .btn:hover { transform: translateY(-2px); opacity: 1; box-shadow: 0 10px 26px rgba(184,149,90,0.3); }
+
+  /* faixa de fotos passando */
+  .strip { overflow: hidden; padding: 4px 0 64px; background: var(--dark-bg); }
+  .strip-track { display: flex; gap: 14px; width: max-content; animation: passar 70s linear infinite; }
+  .strip img { height: 240px; width: 170px; object-fit: cover; display: block; filter: saturate(0.85) brightness(0.92); transition: filter .4s; }
+  .strip img:hover { filter: none; }
+  @keyframes passar { to { transform: translateX(-50%); } }
+
+  /* "R$ ?" brilhando */
+  .locked .q { background: linear-gradient(90deg, rgba(255,255,255,0.18) 0%, rgba(217,192,143,0.95) 50%, rgba(255,255,255,0.18) 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: brilhoTexto 3s linear infinite; }
+
+  /* cartões sobem ao passar o mouse */
+  .card { transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
+  .card:hover { transform: translateY(-6px); border-color: rgba(184,149,90,0.55); box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
+
+  /* elementos que aparecem ao rolar */
+  .js .reveal { opacity: 0; transform: translateY(32px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  /* botão fixo do celular: aparece depois do topo e pulsa */
+  .btn.sticky { position: fixed; transform: translateY(160%); transition: transform .45s cubic-bezier(.2,.7,.2,1); animation: pulso 2.6s ease-in-out infinite; }
+  .btn.sticky.show { transform: none; }
+  @keyframes pulso { 0%, 100% { box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 0 0 rgba(184,149,90,0.55); } 60% { box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 0 12px rgba(184,149,90,0); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .hero-inner > *, .js .reveal { opacity: 1; transform: none; }
+    .hero .rule { width: 48px; }
+    .slots-bar i { transition: none; }
+  }
+
   @media (max-width: 860px) {
     .cards { grid-template-columns: 1fr; gap: 28px; }
     .steps { grid-template-columns: 1fr 1fr; }
@@ -168,6 +242,12 @@
     .steps { grid-template-columns: 1fr; }
     .sticky { display: flex; }
     .hero .btn { width: 100%; justify-content: center; }
+    .hero { padding-top: 0; }
+    .hero-bg { left: 0; bottom: auto; height: 400px; }
+    .hero-bg img { object-position: 50% 32%; opacity: 0.85; }
+    .hero-bg::after { background: linear-gradient(180deg, rgba(21,18,15,0.2) 0%, rgba(21,18,15,0.1) 40%, rgba(21,18,15,0.75) 75%, var(--dark-bg) 100%); }
+    .hero-inner { padding-top: 250px; }
+    .strip img { height: 190px; width: 135px; }
   }
 </style>
 </head>
@@ -206,6 +286,7 @@ const CONFIG = {
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"><img src="img/capa.jpg" alt=""></div>
   <div class="wrap">
     <div class="hero-inner">
       <span class="tag" id="hero-tag">Black Friday 2026</span>
@@ -233,6 +314,9 @@ const CONFIG = {
     </div>
   </div>
 </section>
+
+<!-- FAIXA DE FOTOS -->
+<div class="strip" aria-hidden="true"><div class="strip-track" id="strip"></div></div>
 
 <!-- POR QUE AGORA -->
 <section class="light">
@@ -449,7 +533,8 @@ const CONFIG = {
       const restantes = forced === 'esgotada' ? 0 : CONFIG.datasRestantes;
       $('slots-n').textContent = restantes;
       $('slots-t').textContent = CONFIG.datasTotal;
-      $('slots-bar').style.width = (restantes / CONFIG.datasTotal * 100) + '%';
+      const largura = (restantes / CONFIG.datasTotal * 100) + '%';
+      setTimeout(() => { $('slots-bar').style.width = largura; }, 1200);
       const mostraRestantes = ['prevenda', 'vespera', 'aberta', 'ultimo'].includes(fase);
       $('fact-datas').textContent = mostraRestantes ? restantes : CONFIG.datasTotal;
       if (mostraRestantes) $('fact-datas').nextElementSibling.textContent = 'datas restantes';
@@ -465,9 +550,46 @@ const CONFIG = {
       const m = Math.floor(ms / 6e4); ms -= m * 6e4;
       const s = Math.floor(ms / 1e3);
       const pad = (n) => String(n).padStart(2, '0');
-      $('cd-d').textContent = pad(d); $('cd-h').textContent = pad(h);
-      $('cd-m').textContent = pad(m); $('cd-s').textContent = pad(s);
+      trocar('cd-d', pad(d)); trocar('cd-h', pad(h));
+      trocar('cd-m', pad(m)); trocar('cd-s', pad(s));
     }
+    if (fase !== faseRevelada) { faseRevelada = fase; revelar(); }
+  }
+
+  // número da contagem desce quando muda
+  function trocar(id, valor) {
+    const el = $(id);
+    if (el.textContent === valor) return;
+    el.textContent = valor;
+    el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick');
+  }
+
+  // faixa de fotos (repetida 2x para rodar sem emenda)
+  const FOTOS = ['f01', 'f02', 'f03', 'f04', 'f05', 'f06', 'f07', 'f08', 'f09', 'f10', 'f11', 'f12'];
+  $('strip').innerHTML = [...FOTOS, ...FOTOS].map(f => `<img src="img/${f}.jpg" alt="" loading="lazy">`).join('');
+
+  // elementos aparecem ao rolar a página
+  let faseRevelada = null;
+  const io = 'IntersectionObserver' in window
+    ? new IntersectionObserver((itens) => itens.forEach(i => { if (i.isIntersecting) { i.target.classList.add('in'); io.unobserve(i.target); } }), { threshold: 0.12 })
+    : null;
+  function revelar() {
+    const grupos = ['section.light .wrap > *:not(.facts):not(.steps)', 'section.dark .wrap > .tag', 'section.dark .wrap > h2', '.facts > div', '.cards > .card', '.steps > .step', '.faq details', '.final .wrap > *'];
+    grupos.forEach(sel => document.querySelectorAll(sel).forEach((el, i) => {
+      if (el.classList.contains('reveal')) return;
+      if (!io) return;
+      el.classList.add('reveal');
+      el.style.transitionDelay = (Math.min(i, 5) * 0.12) + 's';
+      io.observe(el);
+    }));
+  }
+
+  // botão fixo do celular só aparece depois de passar o botão do topo
+  if (io) {
+    new IntersectionObserver(([e]) => $('sticky-cta').classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 0))
+      .observe($('hero-cta'));
+  } else {
+    $('sticky-cta').classList.add('show');
   }
 
   if (forced) {
